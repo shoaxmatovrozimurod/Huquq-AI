@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "country": "Davlatni tanlang",
@@ -8,5 +9,32 @@
     "description": "Sun’iy intellekt yordamida qonunlarni o‘rganing, huquqiy savollarga javob toping va bilimingizni tekshiring.",
     "start": "Boshlash",
     "laws": "Qonunlarni ko‘rish"
-  }
+  },
+  "auth": {
+    "loginTitle": "Akkauntga kirish",
+    "registerTitle": "Ro‘yxatdan o‘tish",
+    "email": "Elektron pochta",
+    "password": "Parol",
+    "passwordPlaceholder": "Kamida 6 ta belgi",
+    "loginButton": "Kirish",
+    "registerButton": "Ro‘yxatdan o‘tish",
+    "loading": "Kutilmoqda...",
+    "haveAccount": "Akkauntingiz bormi?",
+    "noAccount": "Akkauntingiz yo‘qmi?",
+    "registerSuccess": "Akkaunt muvaffaqiyatli yaratildi!",
+    "loginSuccess": "Muvaffaqiyatli kirdingiz!",
+    "confirmEmail": "Emailingizni tekshiring va tasdiqlash havolasini bosing.",
+    "connectionError": "Ulanishda xatolik yuz berdi."
+  },
+
+"dashboard": {
+  "title": "Shaxsiy kabinet",
+  "welcome": "Xush kelibsiz",
+  "aiAssistant": "AI huquqiy yordamchi",
+  "lessons": "Huquqiy darslar",
+  "tests": "Test tizimi",
+  "logout": "Chiqish",
+  "loading": "Yuklanmoqda..."
+}
+
 }

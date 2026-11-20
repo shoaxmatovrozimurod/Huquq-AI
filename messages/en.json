@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "country": "Select country",
@@ -8,5 +9,32 @@
     "description": "Learn about laws with AI, find answers to legal questions, and test your knowledge.",
     "start": "Get started",
     "laws": "Explore laws"
-  }
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create an account",
+    "email": "Email address",
+    "password": "Password",
+    "passwordPlaceholder": "At least 6 characters",
+    "loginButton": "Sign in",
+    "registerButton": "Sign up",
+    "loading": "Please wait...",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "registerSuccess": "Account created successfully!",
+    "loginSuccess": "Signed in successfully!",
+    "confirmEmail": "Check your email and click the confirmation link.",
+    "connectionError": "Connection error."
+  },
+
+"dashboard": {
+  "title": "Dashboard",
+  "welcome": "Welcome",
+  "aiAssistant": "AI Legal Assistant",
+  "lessons": "Legal Lessons",
+  "tests": "Testing System",
+  "logout": "Log out",
+  "loading": "Loading..."
+}
+
 }

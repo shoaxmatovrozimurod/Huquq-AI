@@ -1,8 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import uz from "../messages/uz.json";
 import ru from "../messages/ru.json";
 import en from "../messages/en.json";
@@ -19,11 +18,25 @@ const countries = [
   { code: "tm", name: "Turkmaniston" },
 ];
 
+
 export default function Home() {
   const [country, setCountry] = useState("uz");
   const [language, setLanguage] = useState<Language>("uz");
 
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("lexora-language");
+
+    if (
+      savedLanguage === "uz" ||
+      savedLanguage === "ru" ||
+      savedLanguage === "en"
+    ) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
   const t = translations[language];
+
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -50,9 +63,13 @@ export default function Home() {
             <select
               aria-label={t.nav.language}
               value={language}
-              onChange={(e) =>
-                setLanguage(e.target.value as Language)
-              }
+
+              onChange={(e) => {
+                const selectedLanguage = e.target.value as Language;
+                setLanguage(selectedLanguage);
+                localStorage.setItem("lexora-language", selectedLanguage);
+              }}
+
               className="rounded-xl border border-white/20 bg-slate-800 px-5 py-3 text-lg text-white"
             >
               <option value="uz">O‘zbekcha</option>

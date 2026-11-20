@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "country": "Select country",
+    "language": "Select language"
+  },
+  "home": {
+    "title": "Understanding laws is now easier",
+    "description": "Learn about laws with AI, find answers to legal questions, and test your knowledge.",
+    "start": "Get started",
+    "laws": "Explore laws"
+  }
+}

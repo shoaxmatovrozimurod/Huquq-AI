@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "country": "Davlatni tanlang",
+    "language": "Tilni tanlang"
+  },
+  "home": {
+    "title": "Qonunlarni tushunish endi oson",
+    "description": "Sun’iy intellekt yordamida qonunlarni o‘rganing, huquqiy savollarga javob toping va bilimingizni tekshiring.",
+    "start": "Boshlash",
+    "laws": "Qonunlarni ko‘rish"
+  }
+}

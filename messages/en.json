@@ -5,6 +5,7 @@
     "language": "Select language"
   },
   "home": {
+    "badge": "Global Legal AI Platform",
     "title": "Understanding laws is now easier",
     "description": "Learn about laws with AI, find answers to legal questions, and test your knowledge.",
     "start": "Get started",
@@ -34,7 +35,22 @@
   "lessons": "Legal Lessons",
   "tests": "Testing System",
   "logout": "Log out",
-  "loading": "Loading..."
+"loading": "Loading...",
+"logoutError": "An error occurred while logging out."
+},
+
+"aiAssistant": {
+  "title": "AI Legal Assistant",
+  "description": "Ask a legal question and get an answer from the AI assistant.",
+  "empty": "Your conversation will appear here.",
+  "placeholder": "Enter your legal question...",
+  "send": "Send",
+  "back": "Back to Dashboard",
+  "thinking": "Lexora AI is preparing a response...",
+"error": "An error occurred. Please try again.",
+"networkError": "Could not connect to the server.",
+"disclaimer": "Lexora AI provides general legal information. Responses do not replace professional legal advice.",
+"retry": "Try again"
 }
 
 }

@@ -5,6 +5,7 @@
     "language": "Tilni tanlang"
   },
   "home": {
+    "badge": "Xalqaro huquqiy AI platformasi",
     "title": "Qonunlarni tushunish endi oson",
     "description": "Sun’iy intellekt yordamida qonunlarni o‘rganing, huquqiy savollarga javob toping va bilimingizni tekshiring.",
     "start": "Boshlash",
@@ -34,7 +35,23 @@
   "lessons": "Huquqiy darslar",
   "tests": "Test tizimi",
   "logout": "Chiqish",
-  "loading": "Yuklanmoqda..."
+  "loading": "Yuklanmoqda...",
+  "logoutError": "Akkauntdan chiqishda xatolik yuz berdi."
+},
+
+"aiAssistant": {
+  "title": "AI huquqiy yordamchi",
+  "description": "Huquqiy savolingizni yozing va AI yordamchidan javob oling.",
+  "empty": "Suhbat shu yerda ko‘rsatiladi.",
+  "placeholder": "Huquqiy savolingizni kiriting...",
+  "send": "Yuborish",
+  "back": "Shaxsiy kabinetga qaytish",
+  "thinking": "Lexora AI javob tayyorlamoqda...",
+"error": "Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.",
+"networkError": "Server bilan bog‘lanib bo‘lmadi.",
+"disclaimer": "Lexora AI umumiy huquqiy ma’lumot beradi. Javoblar professional yuridik maslahat o‘rnini bosmaydi.",
+"retry": "Qayta urinish"
 }
+
 
 }

@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -14,6 +15,7 @@ const translations = { uz, ru, en };
 type Language = keyof typeof translations;
 
 export default function LoginPage() {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -50,6 +52,7 @@ export default function LoginPage() {
                 setMessage(error.message);
             } else {
                 setMessage(t.loginSuccess);
+                router.replace("/dashboard");
             }
         } catch {
             setMessage(t.connectionError);

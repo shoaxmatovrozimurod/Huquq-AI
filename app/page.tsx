@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import uz from "../messages/uz.json";
 import ru from "../messages/ru.json";
 import en from "../messages/en.json";
-
+import ThemeToggle from "@/components/ThemeToggle";
 const translations = { uz, ru, en };
 
 type Language = keyof typeof translations;
@@ -39,8 +39,9 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <header className="border-b border-white/10">
+    <main className="min-h-screen bg-[var(--lexora-bg)] text-[var(--lexora-text)] transition-colors duration-300">
+
+      <header className="border-b border-slate-200 dark:border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between">
           <h1 className="text-3xl font-extrabold sm:text-4xl">
             ⚖️ Lexora
@@ -51,7 +52,7 @@ export default function Home() {
               aria-label={t.nav.country}
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              className="rounded-xl border border-white/20 bg-slate-800 px-5 py-3 text-lg text-white"
+              className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-lg text-slate-900 transition-colors dark:border-white/20 dark:bg-slate-800 dark:text-white"
             >
               {countries.map((item) => (
                 <option key={item.code} value={item.code}>
@@ -69,42 +70,54 @@ export default function Home() {
                 setLanguage(selectedLanguage);
                 localStorage.setItem("lexora-language", selectedLanguage);
               }}
-
-              className="rounded-xl border border-white/20 bg-slate-800 px-5 py-3 text-lg text-white"
+              className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-lg text-slate-900 transition-colors dark:border-white/20 dark:bg-slate-800 dark:text-white"
             >
               <option value="uz">O‘zbekcha</option>
               <option value="ru">Русский</option>
               <option value="en">English</option>
             </select>
+
+            <ThemeToggle />
+
           </div>
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 text-center sm:py-28">
-        <div className="mb-8 inline-block rounded-full border border-blue-400/30 bg-blue-500/10 px-5 py-3 text-lg text-blue-300">
-          Global Legal AI Platform
+
+      <section className="mx-auto max-w-7xl px-5 pt-10 pb-16 text-center sm:pt-10 sm:pb-15">
+        <div className="mb-8 inline-block rounded-full border border-blue-200 bg-blue-50 px-5 py-3 text-lg font-semibold text-blue-700 transition-colors dark:border-blue-400/30 dark:bg-blue-500/10 dark:text-blue-300">
+          {t.home.badge}
         </div>
 
         <h2 className="mx-auto max-w-5xl text-4xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
           {t.home.title}
         </h2>
 
-        <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-slate-300 sm:text-2xl">
+        <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl">
           {t.home.description}
         </p>
 
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="rounded-xl bg-blue-600 px-9 py-5 text-xl font-bold hover:bg-blue-500">
+
+          <button
+            className="rounded-xl bg-blue-600 px-9 py-5 text-xl font-bold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-xl"
+          >
             {t.home.start}
           </button>
 
-          <button className="rounded-xl border border-white/20 px-9 py-5 text-xl font-semibold hover:bg-white/10">
+
+
+          <button
+            className="rounded-xl border border-slate-300 bg-white px-9 py-5 text-xl font-semibold text-slate-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-400 hover:bg-blue-50 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
             {t.home.laws}
           </button>
+
         </div>
 
+
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-left">
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-blue-500/40">
             <div className="text-5xl">🤖</div>
             <h3 className="mt-5 text-2xl font-bold">
               {language === "uz"
@@ -115,7 +128,7 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-left">
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-blue-500/40">
             <div className="text-5xl">📚</div>
             <h3 className="mt-5 text-2xl font-bold">
               {language === "uz"
@@ -126,7 +139,7 @@ export default function Home() {
             </h3>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-left">
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-blue-500/40">
             <div className="text-5xl">📝</div>
             <h3 className="mt-5 text-2xl font-bold">
               {language === "uz"
@@ -138,6 +151,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }

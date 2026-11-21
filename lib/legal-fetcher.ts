@@ -12,7 +12,7 @@ export async function fetchLegalPage(url: string) {
             headers: {
                 Accept: "text/html",
             },
-            signal: AbortSignal.timeout(10000),
+            signal: AbortSignal.timeout(20000),
             cache: "no-store",
         });
 

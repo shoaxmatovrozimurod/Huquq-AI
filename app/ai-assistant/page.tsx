@@ -32,6 +32,18 @@ export default function AIAssistantPage() {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const savedCountry = localStorage.getItem("lexora-country");
+
+        if (
+            savedCountry === "UZ" ||
+            savedCountry === "KZ" ||
+            savedCountry === "KG" ||
+            savedCountry === "TJ" ||
+            savedCountry === "TM"
+        ) {
+            setCountry(savedCountry);
+        }
+
         const savedLanguage = localStorage.getItem("lexora-language");
 
         if (
@@ -42,6 +54,11 @@ export default function AIAssistantPage() {
             setLanguage(savedLanguage);
         }
     }, []);
+
+    function handleCountryChange(newCountry: Country) {
+        setCountry(newCountry);
+        localStorage.setItem("lexora-country", newCountry);
+    }
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({
@@ -93,17 +110,24 @@ export default function AIAssistantPage() {
                     content: data.reply || t.error,
                 },
             ]);
-        } catch (error) {
+        }
+        catch (error) {
             console.error("Lexora AI xatosi:", error);
+
+            const errorMessage =
+                error instanceof Error
+                    ? error.message
+                    : t.error;
 
             setMessages((prev) => [
                 ...prev,
                 {
                     role: "assistant",
-                    content: t.error,
+                    content: errorMessage,
                 },
             ]);
-        } finally {
+        }
+        finally {
             setIsLoading(false);
         }
     }
@@ -181,7 +205,7 @@ export default function AIAssistantPage() {
                                 <select
                                     id="legal-country"
                                     value={country}
-                                    onChange={(e) => setCountry(e.target.value as Country)}
+                                    onChange={(e) => handleCountryChange(e.target.value as Country)}
                                     disabled={isLoading}
                                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-slate-800 dark:text-white sm:w-56"
                                 >

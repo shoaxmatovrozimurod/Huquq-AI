@@ -1,4 +1,4 @@
-
+import { extractLegalArticle } from "@/lib/legal-parser";
 import { NextResponse } from "next/server";
 import { fetchLegalPage } from "@/lib/legal-fetcher";
 
@@ -31,15 +31,25 @@ export async function GET() {
                 article89Index
             );
 
-            console.log("88-modda ajratildi:");
+
+            const article88Clean = article88Html
+                .replace(/<[^>]*>/g, " ")
+                .replace(/&nbsp;/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+
+            console.log("88-modda toza matni:", article88Clean);
+
             console.log(article88Html);
             console.log("88-modda uzunligi:", article88Html.length);
         }
     }
 
-
+    const article88 = extractLegalArticle(documentText, 88);
+    const article52 = extractLegalArticle(documentText, 52);
     return NextResponse.json({
-
+        article52: article52,
+        article88: article88,
         documentTextLength: documentText.length,
         documentTextPreview: documentText.slice(0, 500),
         success: result.success,

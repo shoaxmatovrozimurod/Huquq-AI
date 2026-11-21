@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       model: "gemini-3.5-flash-lite",
       contents: message.trim(),
       config: {
-        tools: [{ googleSearch: {} }],
+        // tools: [{ googleSearch: {} }],
         systemInstruction:
           `Foydalanuvchi tanlagan davlat: ${legalSource?.name ?? "Noma'lum"}. ` +
           `Ushbu davlatning rasmiy huquqiy manbasi: ${legalSource?.officialWebsite ?? "Aniqlanmagan"}. ` +

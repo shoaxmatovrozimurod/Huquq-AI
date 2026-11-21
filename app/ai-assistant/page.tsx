@@ -19,12 +19,15 @@ type Message = {
     role: "user" | "assistant";
     content: string;
 };
-
+type Country = "UZ" | "KZ" | "KG" | "TJ" | "TM";
 export default function AIAssistantPage() {
+
     const [language, setLanguage] = useState<Language>("uz");
+    const [country, setCountry] = useState<Country>("UZ");
     const [question, setQuestion] = useState("");
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
+
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -73,6 +76,7 @@ export default function AIAssistantPage() {
                 },
                 body: JSON.stringify({
                     message: text,
+                    country: country,
                 }),
             });
 
@@ -141,23 +145,54 @@ export default function AIAssistantPage() {
                             {t.description}
                         </p>
                     </div>
-
                     {/* CHAT CONTAINER */}
                     <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-slate-900/60">
 
+
                         {/* CHAT HEADER */}
-                        <div className="flex items-center gap-3 border-b border-slate-200 bg-slate-50 px-6 py-4 dark:border-white/10 dark:bg-slate-900">
-                            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-100 text-2xl dark:bg-blue-500/15">
-                                ⚖️
+                        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-slate-50 px-6 py-4 dark:border-white/10 dark:bg-slate-900">
+                            {/* LOGO AND TITLE */}
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-100 text-2xl dark:bg-blue-500/15">
+                                    ⚖️
+                                </div>
+
+                                <div>
+                                    <h2 className="font-bold">Lexora AI</h2>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                        {t.title}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div>
-                                <h2 className="font-bold">Lexora AI</h2>
+                            {/* COUNTRY SELECTOR */}
+                            <div className="w-full sm:w-auto">
+                                <label
+                                    htmlFor="legal-country"
+                                    className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400"
+                                >
+                                    {language === "uz"
+                                        ? "Qonunchilik"
+                                        : language === "ru"
+                                            ? "Законодательство"
+                                            : "Legislation"}
+                                </label>
 
-                                <p className="text-xs text-slate-500 dark:text-slate-400">
-                                    {t.title}
-                                </p>
+                                <select
+                                    id="legal-country"
+                                    value={country}
+                                    onChange={(e) => setCountry(e.target.value as Country)}
+                                    disabled={isLoading}
+                                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-slate-800 dark:text-white sm:w-56"
+                                >
+                                    <option value="UZ">🇺🇿 O‘zbekiston</option>
+                                    <option value="KZ">🇰🇿 Qozog‘iston</option>
+                                    <option value="KG">🇰🇬 Qirg‘iziston</option>
+                                    <option value="TJ">🇹🇯 Tojikiston</option>
+                                    <option value="TM">🇹🇲 Turkmaniston</option>
+                                </select>
                             </div>
+
                         </div>
 
                         {/* CHAT MESSAGES */}
@@ -263,7 +298,7 @@ export default function AIAssistantPage() {
                         </form>
                     </div>
                 </section>
-            </div>
-        </main>
+            </div >
+        </main >
     );
 }

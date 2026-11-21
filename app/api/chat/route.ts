@@ -24,6 +24,7 @@ export async function POST(request: Request) {
 
     const ai = new GoogleGenAI({ apiKey });
 
+    console.time("Lexora Gemini javob vaqti");
     const response = await ai.models.generateContent({
       model: "gemini-3.8-flash",
       contents: message.trim(),
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
           "bosmasligini tushuntir.",
       },
     });
-
+    console.timeEnd("Lexora Gemini javob vaqti");
     return NextResponse.json({
       reply: response.text ?? "AI javob qaytarmadi.",
     });

@@ -50,8 +50,26 @@
 "error": "Xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.",
 "networkError": "Server bilan bog‘lanib bo‘lmadi.",
 "disclaimer": "Lexora AI umumiy huquqiy ma’lumot beradi. Javoblar professional yuridik maslahat o‘rnini bosmaydi.",
-"retry": "Qayta urinish"
+    "retry": "Qayta urinish"
+  },
+  
+  "factlens": {
+    "title": "Factlens AI",
+    "description": "Rasm va videolarning sun’iy intellekt yordamida yaratilganlik ehtimolini tekshiring.",
+    "uploadImage": "Rasm yuklash",
+    "uploadVideo": "Video yuklash",
+    "analyze": "Tahlil qilish",
+    "analyzing": "Tahlil qilinmoqda, kuting...",
+    "resultTitle": "Tahlil natijasi",
+    "aiProbability": "AI yordamida yaratilganlik ehtimoli",
+    "likelyAI": "Rasm AI yordamida yaratilgan bo‘lishi ehtimoli yuqori.",
+    "likelyReal": "Rasm AI yordamida yaratilgan bo‘lishi ehtimoli past.",
+    "uncertain": "Aniq xulosa chiqarish uchun dalillar yetarli emas.",
+    "error": "Tahlil vaqtida xatolik yuz berdi.",
+    "invalidFile": "Faqat rasm yoki video faylini yuklang.",
+    "fileTooLarge": "Fayl hajmi belgilangan chegaradan oshib ketdi.",
+    "disclaimer": "AI tahlili ehtimoliy natija beradi va tasvirning haqiqiyligini qat’iy tasdiqlamaydi.",
+    "back": "Shaxsiy kabinetga qaytish"
+  }
 }
 
-
-}

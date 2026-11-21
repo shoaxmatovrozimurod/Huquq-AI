@@ -28,14 +28,21 @@ export async function POST(request: Request) {
     const ai = new GoogleGenAI({ apiKey });
 
     let verifiedLegalContext = "";
+    console.log("Lexora AI savol tekshiruvi:", {
+      country,
+      isDismissalQuestion:
+        /ishdan bo['’ʻ]?shat|mehnat shartnomasini bekor|увольнен|расторжен|жұмыстан шығар/i.test(message),
+      isVacationQuestion:
+        /ta['’ʻ]?til|отпуск|демалыс/i.test(message),
+    });
 
     if (
       country === "KZ" &&
-      /ta['’ʻ]?til|отпуск|демалыс|ishdan bo['’ʻ]?shat|mehnat shartnomasini bekor|увольнен|расторжен|жұмыстан шығар/i.test(message)
+      /ta['’ʻ]?til|отпуск|демалыс|ishdan bo['’‘ʻʼ`]?shat|mehnat shartnomasini bekor|увольнен|расторжен|жұмыстан шығар/i.test(message)
     ) {
 
       const articleNumber =
-        /ishdan bo['’ʻ]?shat|mehnat shartnomasini bekor|увольнен|расторжен|жұмыстан шығар/i.test(message)
+        /ishdan bo['’‘ʻʼ`]?shat|mehnat shartnomasini bekor|увольнен|расторжен|жұмыстан шығар/i.test(message)
           ? 52
           : 88;
 
@@ -104,8 +111,16 @@ export async function POST(request: Request) {
               "Sen Lexora AI nomli huquqiy yordamchisan. " +
               "Foydalanuvchining tilida javob ber. " +
               "Huquqiy savollarga sodda va tushunarli javob ber. " +
+              "Rasmiy qonun matni uzun bo‘lsa, foydalanuvchining savoliga tegishli eng muhim bandlarni qisqacha tushuntir. " +
+              "Qonundagi band raqamlarini o‘zgartirma yoki o‘zingdan yangi raqamlar yaratma. " +
+              "Rasmiy matnni tarjima qilganda huquqiy ma’nosini saqla va tushunarsiz joylarni taxmin bilan to‘ldirma. " +
+              "Javob oxirida tegishli moddaning to‘liq matnini rasmiy manbada o‘qish mumkinligini bildir. " +
               "Qonun moddalarini yoki manbalarni to'qib chiqarma. " +
               "Qonun moddasini aniq bilsang, uning raqamini ko'rsat. " +
+              "Foydalanuvchi savoli bilan birga <legal_source> ichida rasmiy qonun matni berilgan bo‘lsa, javobingni birinchi navbatda shu matnga asosla. " +
+              "Rasmiy matn berilganida hujjat nomini, modda raqamini va rasmiy manbaga havolani javobda aniq ko‘rsat. " +
+              "Rasmiy matnda mavjud bo‘lmagan huquqiy asoslarni tasdiqlangan ma’lumot sifatida keltirma. " +
+              "Agar <legal_source> berilmagan bo‘lsa, qonun matnini tekshirganingni da’vo qilma. " +
               "Rasmiy manba tasdiqlanmagan bo'lsa, buni ochiq ayt. " +
               "Qaysi davlat qonunchiligi haqida gap ketayotgani " +
               "noma'lum bo'lsa, avval davlatni aniqlashtir. " +

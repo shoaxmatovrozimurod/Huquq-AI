@@ -12,6 +12,11 @@ export async function getKazakhstanLaborArticle(
         "https://adilet.zan.kz/api/documents/by-ngr/K1500000414?language=rus";
 
     const result = await fetchLegalPage(apiUrl);
+    console.log("Lexora Adilet API tekshiruvi:", {
+        success: result.success,
+        error: result.success ? null : result.error,
+        responseLength: result.html?.length ?? 0,
+    });
 
     if (!result.success || !result.html) {
         return null;

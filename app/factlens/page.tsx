@@ -118,7 +118,7 @@ export default function FactlensPage() {
                             type="checkbox"
                             checked={hasConsent}
                             onChange={(event) => setHasConsent(event.target.checked)}
-                            className="mt-1 h-4 w-4"
+                            // className="mt-1 h-4 w-4"
                         />
 
                         {/* <span>

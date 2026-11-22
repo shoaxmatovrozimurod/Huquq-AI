@@ -128,13 +128,13 @@ export default function FactlensPage() {
 
                     </label>
 
-                    <button
+                    {/* <button
                         type="button"
                         disabled={!selectedImage}
                         className="mt-5 rounded-lg bg-blue-600 px-6 py-3 text-white disabled:cursor-not-allowed disabled:opacity-50"
                     >
                         {t.analyze}
-                    </button>
+                    </button> */}
                 </div>
 
             </div>

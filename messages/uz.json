@@ -52,7 +52,7 @@
 "disclaimer": "Lexora AI umumiy huquqiy ma’lumot beradi. Javoblar professional yuridik maslahat o‘rnini bosmaydi.",
     "retry": "Qayta urinish"
   },
-  
+
   "factlens": {
     "title": "Factlens AI",
     "description": "Rasm va videolarning sun’iy intellekt yordamida yaratilganlik ehtimolini tekshiring.",
@@ -69,6 +69,7 @@
     "invalidFile": "Faqat rasm yoki video faylini yuklang.",
     "fileTooLarge": "Fayl hajmi belgilangan chegaradan oshib ketdi.",
     "disclaimer": "AI tahlili ehtimoliy natija beradi va tasvirning haqiqiyligini qat’iy tasdiqlamaydi.",
+    "consent": "Rasmim tahlil uchun Sightengine xizmatiga yuborilishiga roziman.",
     "back": "Shaxsiy kabinetga qaytish"
   }
 }

@@ -69,6 +69,7 @@
   "invalidFile": "Please upload an image or video file.",
   "fileTooLarge": "The file exceeds the allowed size limit.",
   "disclaimer": "AI analysis provides probabilistic results and does not definitively establish whether an image is authentic.",
+  "consent": "I agree to send my image to Sightengine for analysis.",
   "back": "Back to Dashboard"
 }
 

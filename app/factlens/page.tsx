@@ -121,10 +121,10 @@ export default function FactlensPage() {
                             className="mt-1 h-4 w-4"
                         />
 
-                        <span>
+                        {/* <span>
                             {t.disclaimer}{" "}
                             {t.consent}
-                        </span>
+                        </span> */}
 
                     </label>
 
